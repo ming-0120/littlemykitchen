@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+ <title>장바구니</title>
+ <link rel="icon" href="./img/logo_1.png" type="image/x-icon">
+  <link rel="stylesheet" href="./style/home_style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="./style/cart_style.css">
+  <div id="header"></div>
+</head>
+<h1>장바구니</h1>
+<div class="products">
+  <h2>상품 목록</h2>
+  <div id="productList"></div>
+</div>
+
+<div class="cart" style="display: none;">
+  <h2>장바구니</h2>
+  <div id="cartList"></div>
+  <div class="cart-total" id="cartTotal"></div>
+</div>
+
+<div class="cart-actions">
+  <button id="addToCartBtn">구매하기</button>
+</div>
+
+<div class="order-form" id="orderForm" style="display:none;">
+  <h2>주문서 작성</h2>
+  <form id="orderFormData" action="./frm_submit.html">
+    <h3>주문자 정보</h3>
+    <label>보내는 분:&nbsp;<span style="color:red">*</span><input type="text" name="name" id="order_name"></label>
+    <label>휴대폰:&nbsp;<span style="color:red">*</span> <input type="text" name="num" id="order_phone" maxlength="13" placeholder="010-0000-0000"></label>
+    <label>이메일:&nbsp;<span style="color:red">*</span> 
+      <input type="text" name="mail_id" id="mail_id" style="width:30%">
+      @
+      <input type="text" name="mail_addr" id="mail_addr"  style="width:30%"> 
+      <select name="mail" id="mail_option"> 
+        <option value="" selected>직접 입력</option>
+        <option value="naver.com">naver.com</option>
+        <option value="daum.net">daum.net</option>
+        <option value="google.com">google.com</option>
+      </select>
+    </label>
+    <hr>
+    <h3>배송 정보</h3>
+    <label>배송지: <span style="color:red">*</span>
+      <input type="button" onclick="input_addr()" value="우편번호 찾기" ><br>
+      <input type="text" name="addr_num" id="addr_num" placeholder="우편번호" readonly>
+      <input type="text" name="addr" id="addr" placeholder="주소" readonly><br>
+      <input type="text" name="addr_detail" id="addr_detail" placeholder="상세주소">
+    </label>
+    <label>배송 요청사항: <input type="text" id="order_msg" name="request" value="빠른 배송 감사합니다." ></label>
+    <button type="button" id="order_ingredients">주문하기</button>
+  </form>
+</div>
+
+<footer>
+  <div id="footer"></div>
+</footer>
+
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="./script/main.js"></script>
+<script src="./script/cart.js"></script>
+</body>
+</html>

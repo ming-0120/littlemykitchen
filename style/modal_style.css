@@ -1,0 +1,194 @@
+/* ===== 모달 전체 배경 ===== */
+.modal { 
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal_body, #searchModalBody {
+  position: relative;
+  background: #FAF9F6;
+  width: 80%;
+  max-width: 800px;
+  min-height: 600px;      /* 최소 높이 확보 */
+  max-height: 90vh;       /* 화면 90%를 최대 높이로 */
+  border-radius: 10px;
+  padding: 20px;
+  overflow-y: auto;       /* 내용 많으면 스크롤 */
+}
+/* ===== 닫기 버튼 ===== */
+.close_btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: #6E5849;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close_btn:hover {
+  transform: scale(1.1);
+}
+
+/* ===== 검색창 ===== */
+.search_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  margin-top: 80px;
+  border-radius: 12px;
+  background-color: #F8F6F2;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.search_container label {
+  color: #6E5849;
+  font-size: 16px;
+  margin-right: 12px;
+  font-weight: 500;
+}
+
+.search_container input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  background: transparent;
+  color: #4B3B2A;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.search_container input::placeholder {
+  color: #BFAE9D;
+}
+
+.search_container input:focus {
+  background-color: #FFFDFB;
+  outline: none;
+}
+
+.search_icon, #searchBtn:hover {
+  font-size: 20px;
+  color: #6E5849;
+  cursor: pointer;
+}
+
+/* ===== 애니메이션 ===== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===== 레시피 테이블 스타일 ===== */
+#recipeList {
+  width: 100%;
+  height: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-height: 200px;
+  text-align: center;
+}
+
+td.recipe-cell {
+  padding: 10px;
+  vertical-align: top;
+  transition: transform 0.2s;
+}
+
+.img-wrap {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.img-wrap img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* ✅ 반응형 적용 */
+@media (max-width: 768px) {
+  table,
+  tbody,
+  tr,
+  td {
+    display: block;        /* 테이블 구조를 세로로 */
+    width: 100%;
+  }
+  .search_container input {
+    width:100%;
+  }
+  td.recipe-cell {
+    margin-bottom: 20px;   /* 셀 사이 여백 */
+  }
+
+  .img-wrap img {
+    width: 100%;           /* 이미지도 화면폭에 맞게 */
+    height: auto;
+  }
+}
+.img-wrap img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.recipe-name {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+/* ===== 페이지네이션 ===== */
+.pager {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.page-btn {
+  background-color: #FFF2E6;
+  color: #6E5849;
+  border: 1px solid #D7BFAE;
+  border-radius: 8px;
+  padding: 6px 12px;
+  margin: 0 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.page-btn:hover {
+  background-color: #F8F6F2;
+  color: #FFF8F0;
+  border-color: #F8F6F2;
+}
+
+.page-btn.active {
+  background-color: #ff9800;
+  color: #fff;
+  border-color: #ff9800;
+}
+
+.page-btn:disabled {
+  background-color: #FFF8F0;
+  color: #BFAE9D;
+  border-color: #D7BFAE;
+  cursor: default;
+  opacity: 0.6;
+}

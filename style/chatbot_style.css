@@ -1,0 +1,102 @@
+/* ===== 모달 배경 ===== */
+.modal_chat {
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* ===== 챗봇 박스 ===== */
+.chat_body {
+  width: 600px;
+  max-width: 90%;
+  height: 600px;
+  background: #fffaf0;
+  border-radius: 15px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+/* ===== 닫기 버튼 ===== */
+.close_btn {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #8b4513;
+}
+
+/* ===== 채팅 영역 ===== */
+.chat_window {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  margin-top: 40px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+/* ===== 메시지 스타일 ===== */
+.user_msg, .bot_msg {
+  text-align: left;
+  max-width: 75%;
+  margin: 8px 0;
+  padding: 10px 14px;
+  border-radius: 15px;
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+.user_msg {
+  background-color: #FFF8F0;
+  color: #6E5849;
+  margin-left: auto;
+}
+
+.bot_msg {
+  background-color: #fff0d5;
+  color: #4a2b00;
+}
+
+/* ===== 입력창 ===== */
+.chat_input_area {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.chat_input_area input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+}
+
+.chat_input_area button {
+  background-color: #6E5849;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+/* ===== 애니메이션 ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}

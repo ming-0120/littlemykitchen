@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="./style/home_style.css">
+<link rel="stylesheet" href="./style/detail.css">
+<!DOCTYPE html>
+<html lang="en">
+<title>레시피</title>
+<link rel="icon" href="./img/logo_1.png" type="image/x-icon">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <div id="header"></div>
+</head>
+<div class="loading__container">
+  <div class="loading--cycle"></div>
+  <p class="loading__text">잠시만 기다려주세요...</p>
+</div>
+
+<body>
+  <div class="recipe-detail">
+    <h1 class="recipe-title" id="recipeName"></h1>
+    <img id="recipeImg" class="recipe-img" src="" alt="레시피 이미지">
+    <div class="recipe-top">
+      <div class="recipe-header">
+        <h2>재료</h2>
+      </div>
+      <div class="recipe-info" id="recipeIngredients"></div>
+      <div id="cartAlert" class="cart-alert">장바구니에 담았습니다!</div>
+    </div>
+    <div class="recipe-footer" style="margin-top: 20px; padding-top:20px; text-align: center;">
+      <button class="shop-btn add-to-cart-btn">장바구니로 이동</button>
+    </div>
+    <div style="clear: both; margin-top: 30px;">
+      <h2>조리 방법</h2>
+      <div class="recipe-step" id="recipeSteps"></div>
+    </div>
+  </div>
+  <footer>
+    <div id="footer"></div>
+  </footer>
+</body>
+
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script src="./script/main.js"></script>
+<script src="./script/detail.js"></script>

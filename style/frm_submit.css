@@ -1,0 +1,157 @@
+/* ===== 기본 페이지 스타일 ===== */
+:root {
+  --bg: #FFF8F0;
+  --panel: #ffffff;
+  --accent: #6E5849;
+  --muted: #9b8b82;
+  --shadow: 0 6px 18px rgba(0,0,0,0.06);
+  --radius: 12px;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  padding: 40px 20px;
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--accent);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  padding-top: 60px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  letter-spacing: -0.5px;
+}
+
+header p {
+  margin: 6px 0 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.card {
+  background: var(--panel);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 18px;
+  align-items: start;
+}
+
+/* 모바일에서 한 칼럼 */
+@media (max-width: 760px) {
+  .card { 
+    grid-template-columns: 1fr; 
+  }
+}
+
+.order-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.label {
+  min-width: 110px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.value {
+  flex: 1;
+  background: #f7f4f2;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #3f2d26;
+  font-size: 0.98rem;
+}
+
+.notes {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.summary {
+  background: #fff;
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+  text-align: left;
+}
+
+.summary h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.05rem;
+}
+
+.summary .meta {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+button {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 6px 12px rgba(110,88,73,0.18);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid #efe7e3;
+}
+
+/* small helper */
+.small {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+/* receipt-like footer */
+.receipt {
+  margin-top: 18px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}

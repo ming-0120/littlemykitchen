@@ -1,0 +1,211 @@
+/* ===== 기본 설정 ===== */
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  padding-top: 60px;
+  background-color: #FFF8F0;
+  color: #6E5849;
+  margin: 0;
+}
+
+h1, h2, h3 {
+  color: #6E5849;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ===== 공통 카드 스타일 (상품, 장바구니, 주문서) ===== */
+.products, .cart, .order-form {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 25px 30px;
+  max-width: 700px;
+  margin: 40px auto;
+  box-shadow: 0 2px 8px rgba(150, 120, 90, 0.1);
+  color: #6E5849;
+}
+
+.products h2, .cart h2, .order-form h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #EADFCC;
+  padding-bottom: 10px;
+}
+
+/* ===== 상품 목록 ===== */
+#productList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #FFF8F0;
+  border: 1px solid #EADFCC;
+  border-radius: 12px;
+  padding: 12px 18px;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.product:hover {
+  background-color: #FFF2E0;
+  box-shadow: 0 2px 6px rgba(200, 160, 100, 0.15);
+}
+
+.product input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #E7B57A;
+  cursor: pointer;
+}
+
+.product div:last-child {
+  flex: 1;
+  margin-left: 12px;
+  font-size: 16px;
+}
+
+/* ===== 버튼 (공통) ===== */
+button, input[type="button"] {
+  background-color: #E7B57A;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 12px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover, input[type="button"]:hover {
+  background-color: #D9A768;
+}
+
+#mail_option {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.04);
+  cursor: pointer;
+  border: 1.5px solid #d8cfc9;
+  border-radius: 10px;
+  background-color: #f7f4f2;
+  color: #6E5849;
+  padding: 10px 14px;
+}
+
+/* ===== 장바구니 ===== */
+#cartList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#cartList > div {
+  background-color: #FFF8F0;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid #EADFCC;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+#cartList > div:hover {
+  background-color: #FFF2E0;
+}
+
+.cart-total {
+  text-align: right;
+  font-weight: 500;
+  margin-top: 10px;
+  font-size: 15px;
+  color: #8B7C6E;
+}
+
+.cart-actions {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* ===== 주문서 ===== */
+.order-form h3 {
+  font-size: 18px;
+  margin-top: 25px;
+}
+
+.order-form hr {
+  border: 0;
+  border-top: 1px solid #EADFCC;
+  margin: 20px 0;
+}
+
+.order-form label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+/* 입력 필드 */
+.order-form input[type="text"],
+.order-form input[type="email"],
+.order-form input[type="tel"] {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 5px;
+  border: 1px solid #EADFCC;
+  border-radius: 10px;
+  background-color: #FFF8F0;
+  font-size: 15px;
+  color: #6E5849;
+  transition: border 0.2s, background 0.2s;
+  box-sizing: border-box;
+}
+
+.order-form input:focus {
+  border-color: #E7B57A;
+  background-color: #FFF3E6;
+  outline: none;
+}
+
+/* 주문하기 버튼 */
+#order_ingredients {
+  display: block;
+  width: 100%;
+  margin-top: 25px;
+}
+
+/* ===== 수량 입력 ===== */
+input.quantity {
+  width: 50px;
+  text-align: center;
+  border: 1px solid #EADFCC;
+  border-radius: 6px;
+  margin-right: 10px;
+  padding: 5px;
+  background-color: #FFF8F0;
+  font-size: 15px;
+  color: #6E5849;
+}
+
+/* ===== 보조 버튼 (투명형) ===== */
+.go-to-cart-btn {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  color: #6E5849;
+  border: 1px solid #E7B57A;
+  border-radius: 15px;
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 12px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.go-to-cart-btn:hover {
+  background-color: #E7B57A;
+  color: white;
+}
