@@ -170,3 +170,4 @@ JS `Date()` 객체로 날짜 차이를 계산할 때
 ---
 
 ## 9. 표지 이미지
+![127.0.0.1_5500_WEB_myweb_index.html.png](attachment:f554e04a-4b4f-4a6b-81d8-14684955f707:127.0.0.1_5500_WEB_myweb_index.html.png)
