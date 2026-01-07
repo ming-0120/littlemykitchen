@@ -164,4 +164,5 @@ JS `Date()` 객체로 날짜 차이를 계산할 때
 ---
 
 ## 9. 표지 이미지
-<img width="1905" height="2234" alt="image" src="https://github.com/user-attachments/assets/3f80539b-de30-4f87-9638-7ee873531d75" />
+<img width="1905" height="2234" alt="image" src="https://github.com/user-attachments/assets/875643e5-fdeb-4368-80d7-7e7b6a255012" />
+
