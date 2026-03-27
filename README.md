@@ -153,6 +153,15 @@ JS `Date()` 객체로 날짜 차이를 계산할 때
 
 ---
 
-## 9. 표지 이미지
+## 9. 상세 이미지
 <img width="1905" height="2234" alt="image" src="https://github.com/user-attachments/assets/875643e5-fdeb-4368-80d7-7e7b6a255012" />
+<img width="823" height="841" alt="image" src="https://github.com/user-attachments/assets/97f89295-5682-4e99-b2eb-9b2aee2a2757" />
+<img width="857" height="851" alt="image" src="https://github.com/user-attachments/assets/1b00804c-0292-4c60-83c3-fa4808323050" />
+<img width="1877" height="854" alt="image" src="https://github.com/user-attachments/assets/0dde864d-9283-4b82-a1af-455586528da8" />
+<img width="354" height="639" alt="image" src="https://github.com/user-attachments/assets/44796f7d-8b31-42bd-befb-9497efb6fe82" />
+<img width="759" height="739" alt="image" src="https://github.com/user-attachments/assets/3a530e9f-5f49-4334-852e-416df39fa3f9" />
+
+
+
+
 
