@@ -150,10 +150,8 @@ JS `Date()` 객체로 날짜 차이를 계산할 때
 ## 8. 스크린샷 및 데모 영상
 
 - 앱 주요 화면별 캡처 이미지 (홈 / 기능 A / 기능 B 등)
-    
-    []()
-    
-    []()
+    ![-Chrome2026-03-2711-34-28-ezgif com-animated-gif-maker](https://github.com/user-attachments/assets/b2726b64-eb9c-46fe-9e31-b85d998e2b51)
+
     
 - 시연 영상 (2분 이내 추천, 링크 삽입 또는 Notion에 직접 첨부)
     
