@@ -107,30 +107,113 @@ JS `Date()` 객체로 날짜 차이를 계산할 때
 2. CRUD 발생할 때마다 항상 저장/로드 로직 분리
 3. `id` 충돌 문제 해결 위해 timestamp 기반 id 생성
 
-### ✅ **문제 사례 3: UI 렌더링이 중복됨 / 리스트가 여러 번 그려짐**
+### ✅ **문제 사례 3: 챗봇이 이전 대화를 기억하지 못하는 문제**
 
-### 🧨 문제 상황
+## 🧨 문제 상황
 
-- 삭제 시 UI가 두 번 렌더링됨
-- 이벤트 등록이 중복되면서 의도치 않은 동작 발생
-
-### 🔍 해결 방법
-
-1. 화면 렌더링을 단일 함수가 책임지도록 구조화
-2. 이벤트 리스너는 최초 한 번만 등록하도록 분리
-3. `innerHTML = ""`로 초기화 후 다시 렌더링
+- 챗봇이 매 요청마다 **독립적인 응답**을 생성
+- 이전 대화 맥락이 반영되지 않아:
+  - 질문이 이어지지 않음
+  - 대화형 UX가 아닌 단발성 응답 형태로 동작
+- 사용자 입장에서:
+  - "대화"가 아닌 "검색"처럼 느껴지는 문제 발생
 
 ---
 
-## 6. 협업 및 커뮤니케이션
+## 🔍 원인 분석
 
-- VSCode Live Server로 실시간 테스트
-- UI 변경 시 이전 UI 와 비교하며 톤을 맞춤
-- 문제 발생 시 원인 파악 → 해결방법 기록
+- API 호출 시 **이전 대화 히스토리를 함께 전달하지 않음**
+- LLM은 상태를 내부적으로 유지하지 않기 때문에  
+  → 매 요청마다 context를 직접 전달해야 함
+
+## 🛠 해결 방법
+
+### 1. 대화 상태를 배열로 관리
+
+```jsx
+letconversation= [
+  { role:"user", content:"너는 친절하고 명확하게 답하는 챗봇이다." }
+];
+```
+
+- 모든 메시지를 배열에 누적
+- user / model 역할 구분
 
 ---
 
-## 7. 개발 결과 및 회고
+### 2. API 요청 시 전체 대화 전달
+
+```jsx
+body:JSON.stringify({
+    contents:conversation.map(c => ({
+        role:c.role,
+        parts: [{ text:c.content }]
+    })),
+    system_instruction: {
+        role:"system",
+        parts: [{
+            text:`
+            너는 오직 '요리 레시피' 주제에만 답해야 해.
+            다른 주제는 거절해야 해.
+            `
+        }]
+    }
+})
+```
+
+- 단일 메시지가 아닌
+👉 "대화 전체"를 모델에 전달
+- 문맥 기반 응답 가능
+
+---
+
+### 3. 응답 이후 다시 상태에 저장
+
+```jsx
+conversation.push({ role:"user", content:msg });
+conversation.push({ role:"model", content:finalText });
+```
+
+- user + model 모두 저장
+- 다음 요청에서 context 유지
+
+---
+
+### 4. 스트리밍 기반 응답 처리
+
+```jsx
+constreader=response.body
+.pipeThrough(newTextDecoderStream())
+.getReader();
+
+letfinalText="";
+
+while (true) {
+const { value, done }=awaitreader.read();
+if (done)break;
+
+constchunk=value.slice(1).trim();
+if (!chunk)continue;
+
+constdata=JSON.parse(chunk);
+consttextChunk=data.candidates?.[0]?.content?.parts?.[0]?.text||"";
+
+finalText+=textChunk;
+
+botDiv.innerHTML=marked.parse(finalText);
+}
+```
+
+- chunk 단위로 데이터 수신
+- 실시간 UI 업데이트
+
+💡 결과
+- LLM은 상태를 기억하지 않기 때문에, 대화 상태를 직접 관리해야 함
+- 단순 API 호출이 아니라 상태 관리 + 스트리밍 UI까지 포함한 구조 설계
+  
+---
+
+## 6. 개발 결과 및 회고
 
 ### 📈 결과
 
@@ -143,17 +226,11 @@ JS `Date()` 객체로 날짜 차이를 계산할 때
 - 작은 프로젝트였지만 구조 분리의 중요성 체감
 - localStorage만으로도 충분히 강력한 기능 구현 가능
 - JS Date 처리가 생각보다 까다로웠으나 큰 배움이 됨
-- 다음엔 Firebase 또는 백엔드 API 붙여보고 싶음
+- 다음엔 백엔드 API 붙여보고 싶음
 
 ---
 
-## 8. 스크린샷 및 데모 영상
-
-- 앱 주요 화면별 캡처 이미지 (홈 / 기능 A / 기능 B 등)
-
----
-
-## 9. 상세 이미지
+## 7. 화면 스크린샷 
 <img width="1905" height="2234" alt="image" src="https://github.com/user-attachments/assets/875643e5-fdeb-4368-80d7-7e7b6a255012" />
 <img width="823" height="841" alt="image" src="https://github.com/user-attachments/assets/97f89295-5682-4e99-b2eb-9b2aee2a2757" />
 <img width="857" height="851" alt="image" src="https://github.com/user-attachments/assets/1b00804c-0292-4c60-83c3-fa4808323050" />
