@@ -66,7 +66,6 @@
 ---
 
 ## 4. 주요 기능
-
 - 레시피 추천(선택한 재료 기반)
 
 ---
@@ -77,15 +76,16 @@
 
 ### 🧨 문제 상황
 
-처음에는 단순히 JS 배열에 저장 → 새로고침하면 초기화됨
-
-로컬 저장 방식이 필요함.
+- 처음에는 단순히 JS 배열에 저장 → 새로고침하면 초기화됨
+ -> 로컬 저장 방식이 필요함.
 
 ### 🔍 해결 과정
 
 1. localStorage는 문자열만 저장 가능 → JSON으로 변환 필요
 2. CRUD 발생할 때마다 항상 저장/로드 로직 분리
 3. `id` 충돌 문제 해결 위해 timestamp 기반 id 생성
+
+---
 
 ### ✅ **챗봇이 이전 대화를 기억하지 못하는 문제**
 
@@ -97,8 +97,6 @@
   - 대화형 UX가 아닌 단발성 응답 형태로 동작
 - 사용자 입장에서:
   - "대화"가 아닌 "검색"처럼 느껴지는 문제 발생
-
----
 
 ### 🛠 해결 방법
 
@@ -112,8 +110,6 @@ letconversation= [
 
 - 모든 메시지를 배열에 누적
 - user / model 역할 구분
-
----
 
 ### 2. API 요청 시 전체 대화 전달
 
@@ -139,7 +135,6 @@ body:JSON.stringify({
 👉 "대화 전체"를 모델에 전달
 - 문맥 기반 응답 가능
 
----
 
 ### 3. 응답 이후 다시 상태에 저장
 
@@ -151,7 +146,6 @@ conversation.push({ role:"model", content:finalText });
 - user + model 모두 저장
 - 다음 요청에서 context 유지
 
----
 
 ### 4. 스트리밍 기반 응답 처리
 
@@ -181,9 +175,11 @@ botDiv.innerHTML=marked.parse(finalText);
 - chunk 단위로 데이터 수신
 - 실시간 UI 업데이트
 
-💡 결과
+### 💡 결과
 - LLM은 상태를 기억하지 않기 때문에, 대화 상태를 직접 관리해야 함
 - 단순 API 호출이 아니라 상태 관리 + 스트리밍 UI까지 포함한 구조 설계
+
+---
 
 ### ✅ 레시피 데이터에서 재료 파싱 정확도 문제
 
@@ -198,7 +194,6 @@ botDiv.innerHTML=marked.parse(finalText);
 → 재료명과 수량이 섞여 있어  
 👉 주문 기능에서 정확한 재료 추출이 어려움
 
----
 ### 🛠 해결 방법
 
 ### 1. 정규식 기반 파싱 로직 구현
@@ -213,15 +208,11 @@ return {
 }
 ```
 
----
-
 ### 2. 불필요 단어 제거 처리
 
 ```jsx
 constcleaned=name.replace(/약간|적당량/g,"").trim();
 ```
-
----
 
 ### 3. 표준화된 구조로 변환
 
@@ -232,7 +223,6 @@ amount:"1/2개"
 }
 ```
 
----
 
 ### 💡 결과
 
@@ -264,8 +254,3 @@ amount:"1/2개"
 <img width="1877" height="854" alt="image" src="https://github.com/user-attachments/assets/0dde864d-9283-4b82-a1af-455586528da8" />
 <img width="354" height="639" alt="image" src="https://github.com/user-attachments/assets/44796f7d-8b31-42bd-befb-9497efb6fe82" />
 <img width="759" height="739" alt="image" src="https://github.com/user-attachments/assets/3a530e9f-5f49-4334-852e-416df39fa3f9" />
-
-
-
-
-
