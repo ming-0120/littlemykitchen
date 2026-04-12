@@ -4,25 +4,31 @@
 ## 화면
 <table>
   <tr>
-    <td style="padding:12px;">
-      <img src="https://github.com/user-attachments/assets/875643e5-fdeb-4368-80d7-7e7b6a255012" style="width:100%; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1);" />
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/875643e5-fdeb-4368-80d7-7e7b6a255012" width="90%"/><br/>
+      <sub>메인 화면</sub>
     </td>
-    <td style="padding:12px;">
-      <img src="https://github.com/user-attachments/assets/1edcd25b-6958-490f-b328-a390dc3247ee" style="width:100%; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1);" />
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/1edcd25b-6958-490f-b328-a390dc3247ee" width="90%"/><br/>
+      <sub>AI 재료 검색, 레시피 추천</sub>
     </td>
-    <td style="padding:12px;">
-      <img src="https://github.com/user-attachments/assets/7c4ae256-ca47-4056-8bd9-708ee7eea2aa" style="width:100%; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1);" />
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/7c4ae256-ca47-4056-8bd9-708ee7eea2aa" width="90%"/><br/>
+      <sub>재료 기반 레시피 검색</sub>
     </td>
   </tr>
   <tr>
-    <td style="padding:12px;">
-      <img src="https://github.com/user-attachments/assets/04460438-84f6-4b6c-ac45-169a702bb000" style="width:100%; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1);" />
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/04460438-84f6-4b6c-ac45-169a702bb000" width="90%"/><br/>
+      <sub>레시피 상세 조회</sub>
     </td>
-    <td style="padding:12px;">
-      <img src="https://github.com/user-attachments/assets/643e3234-68b9-4640-9d0a-3c7795068a9e" style="width:100%; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1);" />
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/643e3234-68b9-4640-9d0a-3c7795068a9e" width="90%"/><br/>
+      <sub>주문자 입력 폼</sub>
     </td>
-    <td style="padding:12px;">
-      <img src="https://github.com/user-attachments/assets/9c7d724a-16b7-457b-9f2e-f7e8c5a93b3a" style="width:100%; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1);" />
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/9c7d724a-16b7-457b-9f2e-f7e8c5a93b3a" width="90%"/><br/>
+      <sub>주문 상세 정보</sub>
     </td>
   </tr>
 </table>
