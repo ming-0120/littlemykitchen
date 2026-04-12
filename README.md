@@ -1,6 +1,20 @@
 # 📱 [자취생의 부엌] – [JS, HTML, CSS]
 <img width="500" height="500" alt="logo_1" src="https://github.com/user-attachments/assets/334bf7b2-d8da-4aac-8956-a9e644cc167e" />
 
+## 화면
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/875643e5-fdeb-4368-80d7-7e7b6a255012" width="100%"/></td>
+    <td><img src="https://github.com/user-attachments/assets/97f89295-5682-4e99-b2eb-9b2aee2a2757" width="100%"/></td>
+    <td><img src="https://github.com/user-attachments/assets/1b00804c-0292-4c60-83c3-fa4808323050" width="100%"/></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/0dde864d-9283-4b82-a1af-455586528da8" width="100%"/></td>
+    <td><img src="https://github.com/user-attachments/assets/44796f7d-8b31-42bd-befb-9497efb6fe82" width="100%"/></td>
+    <td><img src="https://github.com/user-attachments/assets/3a530e9f-5f49-4334-852e-416df39fa3f9" width="100%"/></td>
+  </tr>
+</table>
+
 ---
 
 ## 1. 프로젝트 개요
@@ -8,48 +22,16 @@
 - **프로젝트명**: 자취생의 부엌 – 1인 가구를 위한 식재료 관리 & 레시피 추천 웹사이트
 - **개발 기간**: 2025.10.15 ~ 2025.10.27
 - **수행 방식**: **단독 개발**
-- **담당 범위**: 프론트엔드
-- **기술 스택**: HTML5, JS, CSS
-
 ---
 
-## 2. 기술 스택 및 아키텍처
-
-## 🔧 기술 스택
-
-- **Frontend:** HTML, CSS, Vanilla JS
-- **Data Storage:** Web Storage API (localStorage)
-- **협업툴:** VSCode Live Server, GitHub
-
-### 📐 아키텍처 특징
-
-- MVC 형태의 구조는 아니지만, 기능 기반으로 JS 파일을 분리
-    - `storage.js` – 데이터 저장/조회
-    - `render.js` – 화면 렌더링 담당
-    - `event.js` – 이벤트 리스너 관리
-- SPA처럼 보이도록 DOM 업데이트 방식으로 구성
-
-```jsx
-/* 데이터 구조 예 */
-{
-  "id": 1,
-  "name": "계란",
-  "category": "냉장",
-  "expireDate": "2025-11-25",
-  "daysLeft": 6
-}
-```
-
----
-
-## 3. 주요 기능
-- 검색한 재료 기반 레시피 추천
+## 2. 주요 기능
+- **만개의 레시피 API** 를 활용하여 검색한 재료 기반 레시피 추천
 - 선택한 레시피 내의 재료 구매 기능
-- 챗봇을 활용한 자세한 레시피 검색
+- 챗봇을 활용한 제공된 API 외의 자세한 레시피 검색 기능
 
 ---
 
-## 4. 문제 해결 및 트러블슈팅 경험
+## 3. 문제 해결 및 트러블슈팅 경험
 
 ### ✅ 데이터가 새로고침하면 사라지는 문제
 
@@ -209,27 +191,11 @@ amount:"1/2개"
 - 주문 기능과 안정적으로 연동 가능
 ---
 
-## 5. 개발 결과 및 회고
+## 4. 개발 결과
 
 ### 📈 결과
 
 - 실제 동작 가능한 식재료 관리 웹사이트 완성
 - 순수 HTML/JS 기반으로 로컬 CRUD 기능 구현
 - 날짜 계산·데이터 유지 등 핵심 기능 완성
-
-### 🤔 회고
-
-- 작은 프로젝트였지만 구조 분리의 중요성 체감
-- localStorage만으로도 충분히 강력한 기능 구현 가능
-- JS Date 처리가 생각보다 까다로웠으나 큰 배움이 됨
-- 다음엔 백엔드 API 붙여보고 싶음
-
 ---
-
-## 6. 화면 스크린샷 
-<img width="1905" height="2234" alt="image" src="https://github.com/user-attachments/assets/875643e5-fdeb-4368-80d7-7e7b6a255012" />
-<img width="823" height="841" alt="image" src="https://github.com/user-attachments/assets/97f89295-5682-4e99-b2eb-9b2aee2a2757" />
-<img width="857" height="851" alt="image" src="https://github.com/user-attachments/assets/1b00804c-0292-4c60-83c3-fa4808323050" />
-<img width="1877" height="854" alt="image" src="https://github.com/user-attachments/assets/0dde864d-9283-4b82-a1af-455586528da8" />
-<img width="354" height="639" alt="image" src="https://github.com/user-attachments/assets/44796f7d-8b31-42bd-befb-9497efb6fe82" />
-<img width="759" height="739" alt="image" src="https://github.com/user-attachments/assets/3a530e9f-5f49-4334-852e-416df39fa3f9" />
